@@ -28,9 +28,9 @@ class PlatformWebsocketIo implements IPlatformWebsocket {
     _webSocket = null;
     await Future<void>.delayed(Duration.zero);
     var connectUrl = url;
-    if (io.Platform.isAndroid) {
-      connectUrl = connectUrl.replaceAll('127.0.0.1', '10.0.2.2');
-    }
+    // if (io.Platform.isAndroid) {
+    //   connectUrl = connectUrl.replaceAll('127.0.0.1', '10.0.2.2');
+    // }
     _webSocket = await io.WebSocket.connect(
       connectUrl,
       headers: params.headers,
